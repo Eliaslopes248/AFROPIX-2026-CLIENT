@@ -37,8 +37,10 @@ export default function NavBar({ isLoggedIn = false, searchValue, onSearchChange
         <div className="flex flex-1 justify-end gap-6 items-center">
           <nav className="hidden md:flex items-center gap-6">
             {!isEventFeedPage && (
+              <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Discover</Link>
+            )}
+            {!isEventFeedPage && !isMyEventsPage && (
               <>
-                <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Discover</Link>
                 <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Saved</Link>
                 <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Community</Link>
               </>

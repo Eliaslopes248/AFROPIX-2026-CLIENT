@@ -5,7 +5,7 @@ import EssentialInfo from "../components/event_details_ui/essential_info";
 import RightSideLooksees from "../components/event_details_ui/right_side_looksees";
 import NavBar from "../components/ui/NavBar";
 import WhyVisitUs from "../components/event_details_ui/why_visit_us";
-import { MOCK_EVENTS, CATEGORY_IMAGES } from "../data/mockEvents";
+import { MOCK_EVENTS, CATEGORY_IMAGES, mapThirdSpaceToEvent } from "../data/mockEvents";
 
 const CATEGORY_LABELS = {
   sports: "Sports & Fitness",
@@ -29,9 +29,16 @@ function getEventTags(event) {
   return label ? [label] : [];
 }
 
+/** Normalize so we always have display shape (from mapper or already mapped) */
+function normalizeEvent(raw) {
+  if (!raw) return MOCK_EVENTS[0];
+  if (raw.title != null || raw.event_name == null) return raw;
+  return mapThirdSpaceToEvent(raw);
+}
+
 export default function EventDetails() {
   const { state } = useLocation();
-  const event = state?.event || MOCK_EVENTS[0];
+  const event = normalizeEvent(state?.event || MOCK_EVENTS[0]);
   const imageUrl = getEventImage(event);
   const tags = getEventTags(event);
 

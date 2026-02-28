@@ -14,7 +14,7 @@ export default function EventFeedMap3D({ defaultCenter = DEFAULT_CENTER, hovered
     const google_map_3d_key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
     const script = document.createElement('script');
     script.id = SCRIPT_ID;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${google_map_3d_key}&v=beta&libraries=maps3d`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${google_map_3d_key}&v=beta&libraries=maps3d&loading=async`;
     script.async = true;
     document.head.appendChild(script);
   }, []);

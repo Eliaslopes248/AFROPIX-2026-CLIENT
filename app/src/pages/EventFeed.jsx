@@ -44,7 +44,7 @@ export default function EventFeed() {
           savedEventIds={savedEventIds}
           onToggleSave={handleToggleSave}
         />
-        <div className="flex-1 min-w-0 min-h-0 relative z-0">
+        <div className="hidden md:flex flex-1 min-w-0 min-h-0 relative z-0">
           <EventFeedMap3D
             defaultCenter={DEFAULT_MAP_CENTER}
             hoveredLocation={hoveredLocation}

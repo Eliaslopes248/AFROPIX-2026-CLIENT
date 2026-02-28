@@ -52,7 +52,7 @@ export default function EventFeedSidebar({
   }
 
   return (
-    <aside className="w-[40%] flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 overflow-y-auto custom-scrollbar">
+    <aside className="w-full md:w-[40%] flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 overflow-y-auto custom-scrollbar">
       <div className="p-6">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold">Happening Now</h2>

@@ -32,11 +32,16 @@ export default function LandingPage_HeroSection() {
       {/* Feature Grid Image Component */}
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="relative h-[400px] w-full overflow-hidden rounded-xl bg-slate-200 lg:h-[500px]">
-          <img
-            alt="People laughing and talking in a cozy, sun-drenched community cafe"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="h-full w-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhA6ve1WMoo1X_soZBIt6j2anm64FpfTe9tas4ZxRWM_rUPDq77xCvdsOznOQcfGGfp0V3hi5K5l2KKHiUPY3HG4tK1NiUFnDfwv3vCkKDGqpzBpbvf_X7zvLoXGsY0-_4Pyy_MciG2tAJwBu33zrf_eTOYhgchp5dbkaEgnjnfvd2aowZEKFmpl0yc42U4EnfiGW1mAUyCQMb0TXOl4R8RMpPU0jpPBCs7CVyEfYJWOySiXdevgDkLIGQ7Q6WRPw9mLWLBHe6lA-n"
-          />
+            aria-label="People laughing and talking in a cozy, sun-drenched community cafe"
+          >
+            <source src="/broll-vid.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" aria-hidden />
           <div className="absolute bottom-10 left-10 text-white">
             <p className="text-lg font-medium">Local Gems</p>
