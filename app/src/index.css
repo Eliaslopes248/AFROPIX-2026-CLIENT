@@ -38,6 +38,15 @@ input:focus {
   border-color: var(--color-primary) !important;
 }
 
+/* Hide scrollbar but keep scroll (headbar, etc.) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Thin custom scrollbar (feed sidebar) */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
