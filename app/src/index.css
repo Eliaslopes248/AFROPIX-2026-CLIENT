@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (match mockups: add .dark on html or a parent) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ========== Theme (mockup design tokens) ========== */
+@theme {
+  /* Brand colors from mockups */
+  --color-primary: #0ff0dd;
+  --color-background-light: #f5f8f8;
+  --color-background-dark: #102220;
+  /* Display font for headings / UI */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ========== Base styles ========== */
+@layer base {
+  body {
+    font-family: var(--font-display);
+  }
+}
+
+/* ========== Custom components / utilities (from mockups) ========== */
+
+/* Interest card hover & selected state (create-acc) */
+.interest-card:hover {
+  transform: translateY(-4px);
+  transition: all 0.2s ease-in-out;
+}
+.interest-card.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(15, 240, 221, 0.05);
+}
+
+/* Input focus ring to match primary (create-acc form) */
+input:focus {
+  --tw-ring-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Hide scrollbar but keep scroll (headbar, etc.) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Thin custom scrollbar (feed sidebar) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Loader (wave dots) – uses theme primary */
+@keyframes loader-wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1em);
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+}
+
+.loader-circle {
+  width: 1em;
+  height: 1em;
+  margin: 0 0.25em;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  animation: loader-wave 1.5s infinite ease-in-out;
+  transition: background-color 0.3s ease;
+}

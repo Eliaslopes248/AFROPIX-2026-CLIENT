@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ff0dd",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102220",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold tracking-tight">ThirdSpace</h2>
+</div>
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 w-64">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-500" placeholder="Search spaces..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Discover</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">My Circles</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Events</a>
+</nav>
+<button class="bg-primary text-slate-900 px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
+                        Sign In
+                    </button>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar smiling person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA78PiN2VAjdMQgI2akhTLxUF9r9-Ail3XoN6qYOwQYsOGOWrYsOu_D8RqJZrNuWrr8P82G9yYJlP1W5KRmzecr5MZpRIHBfFdFMcF_pBxbs9z5sGTzQYO7GLoyZzhY4EUEv22i7TxtPbYyb6x1j_IzFTBpsq1FWM59pNv1c_is_sd8aI1DZ3sTfPL1NSfJjkdcplkAgMmXv1qz4SsE-j_3Z7PtptLVLRSDtH_FGMc4mAWu6ahmTvf5lVGpERfJ530fsZNbJNYPmCJ"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<div class="w-full max-w-[1200px] px-4 py-6 md:px-10">
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden mb-8 shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Interior of a cozy modern community cafe with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC65EZpAJWlhfHUcrDhsdmppW9C0LY3mtKgZYGe7kU-W0J0nSAw8kDDMFnjreWlFQYnBImN9n4w82k1TjvPdonc5oVl0TQdaJd0JNY3nANB0qHykhaPZU5teO3ErxOHTqK7aLAJrw5v2d-DaTgakvTQ0mUYekjMfQ9vxLJ-Uc8yvtGQhtCCN7zjgmDRimBiWvij26Yw2sdowbCAsGy1dX_dgeHoAPQ7ZelU6YT-KIvWzFqJyyHHTK3iwud1SAm3cVeuGTJED_gq1ihx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<div class="flex gap-2 mb-3">
+<span class="bg-primary text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Music Venue</span>
+<span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Café</span>
+</div>
+<h1 class="text-white text-4xl md:text-5xl font-extrabold">Community Live Music Café</h1>
+<p class="text-slate-200 text-lg mt-2">124 Melody Lane, East District</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="flex-1 space-y-12">
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<h2 class="text-2xl font-bold">Essential Info</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-primary font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">question_mark</span>
+                                            What it is
+                                        </h3>
+<p class="text-slate-600 dark:text-slate-400">A vibrant third space where premium coffee meets live performance. We host local acoustic acts every evening and provide open-mic slots for emerging talent.</p>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-primary font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">groups</span>
+                                            Who it’s for
+                                        </h3>
+<p class="text-slate-600 dark:text-slate-400">All ages welcome! Perfect for music lovers, digital nomads seeking vibe, and neighborhood families looking for a relaxed evening out.</p>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-primary font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">login</span>
+                                            How to join
+                                        </h3>
+<p class="text-slate-600 dark:text-slate-400">Just walk in! No membership required. If you want to perform, sign up at the bar between 4 PM and 5 PM daily.</p>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-primary font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span>
+                                            What to expect
+                                        </h3>
+<p class="text-slate-600 dark:text-slate-400">Mellow acoustic tunes, the smell of freshly roasted beans, communal seating, and a strictly no-judgment atmosphere.</p>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-xl font-bold mb-6">Why visit us?</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<span class="font-bold text-lg">Local Focus:</span>
+<p class="text-slate-600 dark:text-slate-400">We exclusively feature artists from within a 20-mile radius to support our local creative economy.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<span class="font-bold text-lg">High-Quality Gear:</span>
+<p class="text-slate-600 dark:text-slate-400">Pro-grade sound system and a tuned house piano available for all performers.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<span class="font-bold text-lg">Sustainably Sourced:</span>
+<p class="text-slate-600 dark:text-slate-400">Our coffee is fair-trade and our snacks are provided by local bakeries daily.</p>
+</div>
+</li>
+</ul>
+</section>
+</div>
+<aside class="w-full lg:w-80 space-y-6">
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+<button class="w-full bg-primary text-slate-900 font-bold py-3 rounded-lg mb-6 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add_circle</span>
+                                    Add to My Circles
+                                </button>
+<div class="space-y-4">
+<h4 class="font-bold border-b border-slate-100 dark:border-slate-700 pb-2">Opening Hours</h4>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Mon - Thu</span>
+<span class="font-semibold">08:00 - 22:00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Fri - Sat</span>
+<span class="font-semibold">08:00 - 00:00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Sunday</span>
+<span class="font-semibold">10:00 - 20:00</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Stylized map showing city streets and a location pin" data-location="East District" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqlUNuB4jWcjET11f3GK4qdlzDOHPr9IdhhkFUWcMRsvCOnq88MAYYXgXzdhpfi90W-1Yau4jFqe8HJVm-JpNm05VQRqXdG2mG1IArS9wz4bZvu3C6mxE8IWLVgm9oKDfPSRcD6240WutXYlWuHlwAR8oFnj3jZWtyfNVaOUFuyY2oOB_Dz5kk_J8o82l5ibUxDv2g8inXjiUKXa8m_zioVdCefZvIagI6P23zQKnIIWc_RG3uApSNEwMG9ImNZvAbWOTSWvGotyxs"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary text-4xl drop-shadow-md">location_on</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-sm font-semibold">124 Melody Lane</p>
+<p class="text-xs text-slate-500 mb-3">East District, Soundtown, ST 542</p>
+<button class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">
+                                        GET DIRECTIONS <span class="material-symbols-outlined text-xs">arrow_outward</span>
+</button>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-primary/10 border border-primary/20">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300 italic">"The best place to find new local talent while enjoying a perfect oat latte."</p>
+<p class="text-xs font-bold mt-2">— Sarah K., Regular</p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-20 bg-white dark:bg-slate-900/50">
+<div class="max-w-[1200px] mx-auto grid md:grid-cols-4 gap-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">hub</span>
+<span class="text-xl font-bold">ThirdSpace</span>
+</div>
+<p class="text-slate-500 max-w-sm">Connecting people to the spaces that matter. Find your next community home with us.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Explore</h4>
+<ul class="space-y-2 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Trending Now</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">New Spaces</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Events Calendar</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Support</h4>
+<ul class="space-y-2 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">List your Space</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs text-slate-400">
+<p>© 2024 ThirdSpace Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#">Instagram</a>
+<a class="hover:text-primary" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
