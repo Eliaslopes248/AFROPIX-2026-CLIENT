@@ -5,6 +5,7 @@ export default function NavBar({ isLoggedIn = false, searchValue, onSearchChange
   const { pathname } = useLocation()
   const isCreateAccountPage = pathname === '/create-acc'
   const isEventFeedPage = pathname === '/event-feed'
+  const isMyEventsPage = pathname === '/my-events'
   const isSearchControlled = searchValue !== undefined && typeof onSearchChange === 'function'
 
   if (isLoggedIn) {
@@ -42,7 +43,12 @@ export default function NavBar({ isLoggedIn = false, searchValue, onSearchChange
                 <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Community</Link>
               </>
             )}
-            <Link to="/event-feed" className="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">My Events</Link>
+            <Link
+              to="/my-events"
+              className={`text-sm font-medium transition-colors ${isMyEventsPage ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary'}`}
+            >
+              My Events
+            </Link>
           </nav>
           <div className="h-6 w-px bg-slate-200 dark:bg-slate-700" aria-hidden />
           <button

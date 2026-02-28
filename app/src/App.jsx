@@ -5,6 +5,7 @@ import CreateAccount from './pages/CreateAccount'
 import EventFeed from './pages/EventFeed'
 import LandingPage from './pages/LandingPage'
 import EventDetails from './pages/EventDetails'
+import MyEvents from './pages/MyEvents'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/create-acc' element={<CreateAccount/>}/>
         <Route path='/event-feed' element={<EventFeed/>}/>
+        <Route path='/my-events' element={<MyEvents/>}/>
         <Route path='/landing-page' element={<LandingPage/>}/>
         <Route path='/event-details' element={<EventDetails/>}/>
       </Routes>

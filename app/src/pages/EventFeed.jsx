@@ -9,6 +9,16 @@ const DEFAULT_MAP_CENTER = { lat: 35.9132, lng: -79.0558 };
 export default function EventFeed() {
   const [hoveredLocation, setHoveredLocation] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [savedEventIds, setSavedEventIds] = useState(new Set());
+
+  const handleToggleSave = useCallback((event) => {
+    setSavedEventIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(event.id)) next.delete(event.id);
+      else next.add(event.id);
+      return next;
+    });
+  }, []);
 
   const handleEventHover = useCallback((lat, lng) => {
     setHoveredLocation({ lat, lng });
@@ -31,6 +41,8 @@ export default function EventFeed() {
           onEventHover={handleEventHover}
           onEventLeave={handleEventLeave}
           searchQuery={searchQuery}
+          savedEventIds={savedEventIds}
+          onToggleSave={handleToggleSave}
         />
         <div className="flex-1 min-w-0 min-h-0 relative z-0">
           <EventFeedMap3D

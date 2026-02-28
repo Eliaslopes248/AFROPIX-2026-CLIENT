@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { MOCK_EVENTS, CATEGORY_IMAGES } from '../../data/mockEvents'
 
 const CATEGORY_LABELS = {
@@ -39,9 +40,12 @@ export default function EventFeedSidebar({
   onEventHover,
   onEventLeave,
   searchQuery = '',
+  savedEventIds = new Set(),
+  onToggleSave,
 }) {
   const navigate = useNavigate()
   const filteredEvents = MOCK_EVENTS.filter((event) => matchEvent(searchQuery, event))
+  const savedSet = savedEventIds instanceof Set ? savedEventIds : new Set(savedEventIds || [])
 
   const handleCardClick = (event) => {
     navigate('/event-details', { state: { event } })
@@ -72,6 +76,21 @@ export default function EventFeedSidebar({
                   onMouseLeave={() => onEventLeave?.()}
                 >
                   <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onToggleSave?.(event)
+                      }}
+                      className="absolute top-2 right-2 z-10 p-1.5 rounded-lg bg-white/90 dark:bg-slate-900/90 text-slate-400 hover:text-primary transition-colors shadow-sm"
+                      aria-label={savedSet.has(event.id) ? 'Unsave event' : 'Save event'}
+                    >
+                      {savedSet.has(event.id) ? (
+                        <IoMdHeart className="text-xl text-primary" />
+                      ) : (
+                        <IoMdHeartEmpty className="text-xl" />
+                      )}
+                    </button>
                     <div className="absolute top-2 left-2 z-10 flex gap-2">
                       <span className="bg-primary text-slate-900 text-[10px] font-bold px-2 py-1 rounded">{event.priceTag}</span>
                       <span className="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-md">{event.vibeTag}</span>
