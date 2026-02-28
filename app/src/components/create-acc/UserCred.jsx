@@ -7,9 +7,10 @@ const initialAccountCredentials = {
   lastName: '',
   email: '',
   phone: '',
+  interests: [],
 }
 
-export default function UserCred() {
+export default function UserCred({ selectedInterests = new Set() }) {
   const [accountCredentials, setAccountCredentials] = useState(initialAccountCredentials)
 
   const allValid =
@@ -32,6 +33,7 @@ export default function UserCred() {
         lastName: accountCredentials.lastName.trim(),
         email: accountCredentials.email.trim(),
         phone: accountCredentials.phone.trim(),
+        interests: Array.from(selectedInterests),
       },
     }
     console.log(saved)

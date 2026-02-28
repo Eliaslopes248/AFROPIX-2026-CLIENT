@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../components/ui/NavBar'
 import InterestGrid from '../components/create-acc/InterestGrid'
 import UserCred from '../components/create-acc/UserCred'
 
 export default function CreateAccount() {
+  const [selectedInterests, setSelectedInterests] = useState(new Set())
+
   return (
     <>
         <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
@@ -23,9 +25,9 @@ export default function CreateAccount() {
                             </div>
                             {/* <!-- ----- PAGE HERO / TITLE SECTION end ----- --> */}
                             {/* interest grid  */}
-                            <InterestGrid/>
+                            <InterestGrid selectedInterests={selectedInterests} onToggle={setSelectedInterests} />
 
-                            <UserCred/>
+                            <UserCred selectedInterests={selectedInterests} />
 
                         </div>
                     </div>

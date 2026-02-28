@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const INTERESTS = [
   { id: 'sports', title: 'Sports & Fitness', subtitle: 'Find local teams and gyms', icon: 'fitness_center', iconBg: 'bg-blue-100 dark:bg-blue-900/30', iconColor: 'text-blue-500' },
@@ -11,15 +11,15 @@ const INTERESTS = [
   { id: 'volunteering', title: 'Volunteering', subtitle: 'Community service projects', icon: 'volunteer_activism', iconBg: 'bg-red-100 dark:bg-red-900/30', iconColor: 'text-red-500' },
 ]
 
+
+
 const cardBaseClass = 'interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all'
 const cardHoverRingClass = 'hover:ring-2 hover:ring-blue-400 dark:hover:ring-blue-500 hover:ring-offset-2'
 const cardSelectedClass = 'border-blue-500 dark:border-blue-400'
 
-export default function InterestGrid() {
-  const [selected, setSelected] = useState(new Set())
-
+export default function InterestGrid({ selectedInterests, onToggle }) {
   function toggle(id) {
-    setSelected((prev) => {
+    onToggle((prev) => {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
       else next.add(id)
@@ -32,7 +32,7 @@ export default function InterestGrid() {
       {/* <!-- ----- INTERESTS GRID (selectable cards) start ----- --> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         {INTERESTS.map((item) => {
-          const isSelected = selected.has(item.id)
+          const isSelected = selectedInterests.has(item.id)
           return (
             <div
               key={item.id}
