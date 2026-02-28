@@ -18,7 +18,7 @@ export default function CreateAccount() {
                             <div class="flex flex-col gap-4 mb-10 text-center md:text-left">
                                 <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight">What brings you joy?</h1>
                                 <p class="text-slate-600 dark:text-slate-400 text-lg font-medium max-w-2xl">
-                                    Select at least 3 interests and complete your details to find your perfect third space.
+                                    Select interests and complete your details to find your perfect third space.
                                 </p>
                             </div>
                             {/* <!-- ----- PAGE HERO / TITLE SECTION end ----- --> */}
