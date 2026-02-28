@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function CallingAction() {
   return (
@@ -11,12 +12,9 @@ export default function CallingAction() {
           Join thousands of neighbors rediscovering their local communities. Your next favorite spot is just a click away.
         </p>
         <div className="mt-10 flex justify-center">
-          <button
-            type="button"
-            className="h-14 rounded-full bg-primary px-10 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:scale-105 transition-transform"
-          >
+          <Link to="/create-acc" className="flex h-14 min-w-[200px] items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:scale-105 transition-transform">
             Get Started Now
-          </button>
+            </Link>
         </div>
       </div>
     </section>
