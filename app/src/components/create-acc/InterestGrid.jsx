@@ -1,14 +1,14 @@
 import React from 'react'
 
 const INTERESTS = [
-  { id: 'sports', title: 'Sports & Fitness', subtitle: 'Find local teams and gyms', icon: 'fitness_center', iconBg: 'bg-blue-100 dark:bg-blue-900/30', iconColor: 'text-blue-500' },
-  { id: 'arts', title: 'Arts & Culture', subtitle: 'Galleries and studios', icon: 'palette', iconBg: 'bg-purple-100 dark:bg-purple-900/30', iconColor: 'text-purple-500' },
-  { id: 'tech', title: 'Tech & Coding', subtitle: 'Hackathons and meetups', icon: 'terminal', iconBg: 'bg-emerald-100 dark:bg-emerald-900/30', iconColor: 'text-emerald-500' },
-  { id: 'music', title: 'Music & Performance', subtitle: 'Live shows and jam sessions', icon: 'music_note', iconBg: 'bg-pink-100 dark:bg-pink-900/30', iconColor: 'text-pink-500' },
-  { id: 'food', title: 'Food & Drink', subtitle: 'Cafes, bars, and markets', icon: 'restaurant', iconBg: 'bg-orange-100 dark:bg-orange-900/30', iconColor: 'text-orange-500' },
-  { id: 'nature', title: 'Nature & Outdoors', subtitle: 'Hiking and gardening', icon: 'forest', iconBg: 'bg-green-100 dark:bg-green-900/30', iconColor: 'text-green-500' },
-  { id: 'gaming', title: 'Gaming', subtitle: 'Arcades and gaming hubs', icon: 'sports_esports', iconBg: 'bg-indigo-100 dark:bg-indigo-900/30', iconColor: 'text-indigo-500' },
-  { id: 'volunteering', title: 'Volunteering', subtitle: 'Community service projects', icon: 'volunteer_activism', iconBg: 'bg-red-100 dark:bg-red-900/30', iconColor: 'text-red-500' },
+  { id: 'sports', title: 'Sports & Fitness', subtitle: 'Find local teams and gyms', icon: 'fitness_center', iconBg: 'bg-blue-100 dark:bg-blue-900/30', iconColor: 'text-blue-500', enum: 'SPORTS_AND_FITNESS' },
+  { id: 'arts', title: 'Arts & Culture', subtitle: 'Galleries and studios', icon: 'palette', iconBg: 'bg-purple-100 dark:bg-purple-900/30', iconColor: 'text-purple-500', enum: 'ARTS_AND_CULTURE' },
+  { id: 'tech', title: 'Tech & Coding', subtitle: 'Hackathons and meetups', icon: 'terminal', iconBg: 'bg-emerald-100 dark:bg-emerald-900/30', iconColor: 'text-emerald-500', enum: 'TECH_AND_CODING' },
+  { id: 'music', title: 'Music & Performance', subtitle: 'Live shows and jam sessions', icon: 'music_note', iconBg: 'bg-pink-100 dark:bg-pink-900/30', iconColor: 'text-pink-500', enum: 'MUSIC_AND_PERFORMANCE' },
+  { id: 'food', title: 'Food & Drink', subtitle: 'Cafes, bars, and markets', icon: 'restaurant', iconBg: 'bg-orange-100 dark:bg-orange-900/30', iconColor: 'text-orange-500', enum: 'FOOD_AND_DRINK' },
+  { id: 'nature', title: 'Nature & Outdoors', subtitle: 'Hiking and gardening', icon: 'forest', iconBg: 'bg-green-100 dark:bg-green-900/30', iconColor: 'text-green-500', enum: 'NATURE_AND_OUTDOORS' },
+  { id: 'gaming', title: 'Gaming', subtitle: 'Arcades and gaming hubs', icon: 'sports_esports', iconBg: 'bg-indigo-100 dark:bg-indigo-900/30', iconColor: 'text-indigo-500', enum: 'GAMING' },
+  { id: 'volunteering', title: 'Volunteering', subtitle: 'Community service projects', icon: 'volunteer_activism', iconBg: 'bg-red-100 dark:bg-red-900/30', iconColor: 'text-red-500', enum: 'VOLUNTEERING' },
 ]
 
 
