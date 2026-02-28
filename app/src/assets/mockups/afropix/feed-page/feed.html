@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Main Discovery Dashboard | LocalSpaces</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0ff0dd",
+              "background-light": "#f5f8f8",
+              "background-dark": "#102220",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-hidden h-screen flex flex-col">
+
+    <!-- ========== HEADER / NAVBAR start ========== -->
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 z-50">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+          <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-slate-900">
+            <span class="material-symbols-outlined">explore</span>
+          </div>
+          <h2 class="text-lg font-bold leading-tight tracking-tight">LocalSpaces</h2>
+        </div>
+        <label class="flex flex-col min-w-64 !h-10 max-w-md">
+          <div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-slate-100 dark:bg-slate-800">
+            <div class="text-slate-500 flex items-center justify-center pl-4">
+              <span class="material-symbols-outlined text-[20px]">search</span>
+            </div>
+            <input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 placeholder:text-slate-500 px-3 text-sm font-normal" placeholder="Search spaces or events..." value=""/>
+          </div>
+        </label>
+      </div>
+      <div class="flex flex-1 justify-end gap-6 items-center">
+        <nav class="hidden md:flex items-center gap-6">
+          <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Discover</a>
+          <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">My Events</a>
+          <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Saved</a>
+          <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+        </nav>
+        <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+        <button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-slate-900 text-sm font-bold transition-transform active:scale-95">
+          <span>Create Event</span>
+        </button>
+        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border-2 border-primary/20" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUhOSsqjo1YjsNAX-JDnznEQ2g5r44abMR7fkQmtPuQuYJhj9JyZv-KCK1L5QMGB2apJ2xnOY2vyAWQLAOz896dYwuopHV69k8bCZkA0-iIEgoI1qQBXqlUUus1XbXA4PNILQDU6FfhrgvLHeC4stIfzBKMzX6aElM5YqP4NbmvyfJP1uzzUo-7rE9Ww799Yp3Y5pEwP0puRHB4gYLgy2bB91aSG8JC0qOML0C4RFfGPTLRdz5ZBlG4fpquQjfJoP00uedCJT0hUIF");'></div>
+      </div>
+    </header>
+    <!-- ========== HEADER / NAVBAR end ========== -->
+
+    <!-- ========== FILTER BAR (category, time, sort) start ========== -->
+    <div class="flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-x-auto no-scrollbar">
+      <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 px-4 border border-transparent hover:border-primary/50 transition-all">
+        <span class="text-slate-700 dark:text-slate-300 text-xs font-semibold">Category</span>
+        <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+      </button>
+      <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 border border-primary/30 px-4">
+        <span class="text-slate-900 dark:text-slate-100 text-xs font-semibold">Time: Now</span>
+        <span class="material-symbols-outlined text-[18px]">schedule</span>
+      </button>
+      <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 px-4 border border-transparent hover:border-primary/50 transition-all">
+        <span class="text-slate-700 dark:text-slate-300 text-xs font-semibold">Tonight</span>
+        <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+      </button>
+      <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 px-4 border border-transparent hover:border-primary/50 transition-all">
+        <span class="text-slate-700 dark:text-slate-300 text-xs font-semibold">Weekend</span>
+        <span class="material-symbols-outlined text-[18px]">event</span>
+      </button>
+      <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 dark:bg-slate-800 px-4 border border-transparent hover:border-primary/50 transition-all">
+        <span class="text-slate-700 dark:text-slate-300 text-xs font-semibold">Social Vibe</span>
+        <span class="material-symbols-outlined text-[18px]">mood</span>
+      </button>
+      <div class="ml-auto flex items-center gap-2">
+        <span class="text-xs text-slate-500 font-medium">Sort by:</span>
+        <button class="text-xs font-bold flex items-center gap-1">Proximity <span class="material-symbols-outlined text-[16px]">expand_more</span></button>
+      </div>
+    </div>
+    <!-- ========== FILTER BAR end ========== -->
+
+    <!-- ========== MAIN LAYOUT (sidebar + map) start ========== -->
+    <main class="flex flex-1 overflow-hidden">
+
+      <!-- ----- SIDEBAR (event list) start ----- -->
+      <aside class="w-[40%] flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 overflow-y-auto custom-scrollbar">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-bold">Happening Now</h2>
+            <span class="px-2 py-1 bg-red-100 text-red-600 text-[10px] font-bold rounded uppercase tracking-wider animate-pulse">Live</span>
+          </div>
+          <div class="space-y-4">
+            <!-- Event card: The Reading Nook -->
+            <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+              <div class="relative h-40 w-full overflow-hidden rounded-lg">
+                <div class="absolute top-2 left-2 z-10 flex gap-2">
+                  <span class="bg-primary text-slate-900 text-[10px] font-bold px-2 py-1 rounded">FREE</span>
+                  <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-md">CASUAL</span>
+                </div>
+                <div class="h-full w-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Interior of a modern cafe with people working" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANYAcqERTAif58r3ETzcKuKqHNA97gvZr7NF9CL3XfChGPr6NHRdaQmDNKRVnZpO4_3_oxJraDwAr5ADy2q8Q79rVBqy344utz6cituvsxmchKwl5KXHi16F5eykX1GfPpTSwLEtvqdX7gJ-h5L4-Gs2sJjiLNPV9yunrkuBoFQR6KzUg-JNUWJcNKtfzGjSJ2xYbiPyZYri3Bw6PmqhcvGxebgjklQEfS-7ROmQgMwP-UaIMxsQSewgEb-4huA5fN3Na0r8hvoDqE");'></div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">The Reading Nook</h3>
+                  <div class="flex items-center text-xs font-semibold text-primary">
+                    <span class="material-symbols-outlined text-[14px] mr-1">location_on</span>
+                    0.4 mi
+                  </div>
+                </div>
+                <p class="text-slate-500 text-sm leading-snug">Quiet coworking &amp; book exchange. Perfect for deep focus or light reading.</p>
+                <div class="mt-2 flex items-center justify-between">
+                  <div class="flex -space-x-2">
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBw39cTTyZlGXveLEFzPiJcQSPFZqR3M9fgCA-hiJsbYtvl1A74kEovLYvonAn6fZXSa_KG6V7AqFDbPguNtPPB4_jQERQy-h8BsB27CQoBMlEuyX4QkO829paRREVmvOiq6xfJ7epMjXxOaIvM-pg7GIjxhqdWZeLvsMvyClKZvSlqMKGmYDqUnFZ2zV0qsIwbweu22UOJHcz-dJfv0KR9WDx-lOLmteuXuhA84J3I6tQSg3OkE0tuNJzPysvvi6Hlr12yFYiCvdhB");'></div>
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq0aQg6_5M5eTr29jMUI-WyPYfesrXcAZNZRGEgfLx_2lljoE6EdaGVuJDFbgAF3NU0fPahbQ70u8YSaINgxf__RKIZf7eqhIwGSODmH6XqJ7mui5P5z9TheRpVpW3iaV8C-Ebz7ainldbtNznSPRz84tKK6hJZl0sf8iNmefoG2Tlaj-i8tEuYnrbkbKFfvHf9-yo5aFl7YkQ0PqWhN0ikALtN8iVN9LcdksYlk0VvTNnj2KkqrcXoBC7LN8Q8rDBXFlr2nLo46EB");'></div>
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300 flex items-center justify-center text-[8px] font-bold">+12</div>
+                  </div>
+                  <button class="text-xs font-bold text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg hover:bg-primary transition-colors">View Details</button>
+                </div>
+              </div>
+            </div>
+            <!-- Event card: Rooftop Garden Meetup -->
+            <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+              <div class="relative h-40 w-full overflow-hidden rounded-lg">
+                <div class="absolute top-2 left-2 z-10 flex gap-2">
+                  <span class="bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded">$10 Entry</span>
+                  <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-md">VIBRANT</span>
+                </div>
+                <div class="h-full w-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Community rooftop garden party" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFRRqcuzuL1Tr8MVgnWrBB8x7uoVYqa8KvveeyZMnPfBxMlbDFv5IjGc3Un8yQD8Od5jHxA8ytLhImQr02fEMN1t6BpZdAMln_t6tKX1pZRjJds74FT1zmVdNcM8OnmPSKfZcWQUXS-OlP9e1tcx3p8r46fNotwehPy-Ci1wriUOI-_TSnMt6Us7S37RGEcJbIY0VwYo6-gGod7U90HcLjGoSldKrDmfcidDNNRPqCHURLHF_z2tb9VCZhsBx_FtaXY3UMNBgxzPw9");'></div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Rooftop Garden Meetup</h3>
+                  <div class="flex items-center text-xs font-semibold text-primary">
+                    <span class="material-symbols-outlined text-[14px] mr-1">location_on</span>
+                    1.2 mi
+                  </div>
+                </div>
+                <p class="text-slate-500 text-sm leading-snug">Weekly social mixer with local organic snacks and chill music vibes.</p>
+                <div class="mt-2 flex items-center justify-between">
+                  <div class="flex -space-x-2">
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCr6HF219a8UoO99jYqHhQS68bg21UH_lGaQeDrogiz9dtI7gq9s_q2Ai8emHWLAUYgMJA3dfUMoE9TBX_TKuKTm18pIB2OMsoXvMh-yM7AmfiljrlOHcU6gSFXKt0K9nWcIpyM95_-phqjAf7zCPKN5JTjwzcRo8wfbzwPUghqsFWJyX6C4pbL3Xr6Ihm7mFGFeor0gKJz54bH4VQZpaF_2WxuEJKyJRe5E8r1N7icNrCZcidCpyKI8B8j5lBwCdJnGT0GQjG69dHf");'></div>
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300 flex items-center justify-center text-[8px] font-bold">+45</div>
+                  </div>
+                  <button class="text-xs font-bold text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg hover:bg-primary transition-colors">Join Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Event card: Makerspace Open Lab -->
+            <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+              <div class="relative h-40 w-full overflow-hidden rounded-lg">
+                <div class="absolute top-2 left-2 z-10 flex gap-2">
+                  <span class="bg-primary text-slate-900 text-[10px] font-bold px-2 py-1 rounded">FREE</span>
+                  <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded backdrop-blur-md">CREATIVE</span>
+                </div>
+                <div class="h-full w-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Art studio space with canvas and paint" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCagbbiK4hB8qkDVrzFjyjDULY3QtSKx8exFI2l-G7MthaVILLCwL93xVaVW2LI3YkhsYeJoP0HNuoGxNFPrZXNQFwX4vASw_OuDhj3_DxbkS6qaPpZLLTXGc7SAej6LlKJ6wVHcQxB5LAYWBOWS_0UPbUoMk9MHC6aNLKRhVLE_AU69IA-OL2zFHt1X3Veez03WQRjI2l5wd2IpSn-MwTJK3PFuvRvW5hJ5wKsIloP9B68ZtXure86dj1Gh1grXBsucqbaXdyALfkO");'></div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Makerspace Open Lab</h3>
+                  <div class="flex items-center text-xs font-semibold text-primary">
+                    <span class="material-symbols-outlined text-[14px] mr-1">location_on</span>
+                    0.8 mi
+                  </div>
+                </div>
+                <p class="text-slate-500 text-sm leading-snug">Bring your own project and use our tools. Community mentoring available.</p>
+                <div class="mt-2 flex items-center justify-between">
+                  <div class="flex -space-x-2">
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkXHZa8tOxgwUjU0PaddPDsuilx4KSDYdtuH93SbVuHwFnWL6dg65sG3Qy59SW5XTgWnTNxgOPumQhsO_zhr-htbLHfGpUSNlNhlX-xZvjBG3plYpgGtn5P63K1CgJ2C_8GaUkBPMhS4GlxwRZRBVZvSzUajAulwCnL_JbgJnygepgoeOGuhVrTlAofmGbWowHw-PHLGP0NRCsGBJGYSLerYfnXcLiv_ZVvPQtHwj8kyPLPWBknBUpXtZJNvCQm9fD3U9_SrNyBEmt");'></div>
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDro7GE_jQvsEvqIvkCfZTJ-81xOFoQpZSr8SqPgLLx3IWT--ayw3M8timtTu1rJHw7_oQDhyb5BjbH-6M_O5XBC6ISBzWGvatNq6wu6-F_DphmoJLZNgzS0T7DI3UFsEG_48wUmPHzeIoZjhCewBMAycY_QL6TjFBSbJuxGckq1kdYCObD6XgwgTKPO3l4xnKcffJ-3NsoLOODYWYwmCxkoZKXqplMAg_FxnzBqPo9V5ADysaBXTsGL-i5kCrETBXEz3ApHONKSaed");'></div>
+                    <div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300 flex items-center justify-center text-[8px] font-bold">+8</div>
+                  </div>
+                  <button class="text-xs font-bold text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg hover:bg-primary transition-colors">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- ----- SIDEBAR end ----- -->
+
+      <!-- ----- MAP SECTION start ----- -->
+      <section class="flex-1 relative bg-slate-200 dark:bg-slate-800">
+        <!-- Map background + overlay -->
+        <div class="absolute inset-0 z-0 bg-center bg-cover" data-alt="Stylized map of a city neighborhood" data-location="San Francisco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2pLIsj1RnLLITigWW22ijJKnEnEvGS1SESj-_DnQf2Ha9XVKsLH2VKDxTZYoIo7RST851StE0Hluch5hl4afX2sj1clRktRpDn3WSeuy8YoPe1QIm8xJFH63EV0yMt0HkjUG03wm5FREDOZQQMa0bO5FviivnHubGEBgmdObJqNndNtbYfUi9CHQL2YYNMdDZn8JKs1U5pKNFi6QyVaqQqqEvITJnKYRbw9rjmyABNuamYOaVo3WWpsYXDzAuIZRL9JjgwSortK-I");'>
+          <div class="absolute inset-0 bg-slate-900/10"></div>
+          <!-- Map marker: The Reading Nook -->
+          <div class="absolute top-[25%] left-[40%] group cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
+            <div class="relative">
+              <div class="absolute -inset-2 bg-primary/40 rounded-full animate-ping"></div>
+              <div class="relative bg-white dark:bg-slate-900 p-1.5 rounded-full shadow-lg border-2 border-primary">
+                <span class="material-symbols-outlined text-primary text-[24px]">book_2</span>
+              </div>
+              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                The Reading Nook
+              </div>
+            </div>
+          </div>
+          <!-- Map marker: Rooftop Garden -->
+          <div class="absolute top-[55%] left-[65%] group cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
+            <div class="relative">
+              <div class="relative bg-white dark:bg-slate-900 p-1.5 rounded-full shadow-lg border-2 border-slate-400">
+                <span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-[24px]">park</span>
+              </div>
+              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                Rooftop Garden
+              </div>
+            </div>
+          </div>
+          <!-- Map marker: Makerspace -->
+          <div class="absolute top-[40%] left-[20%] group cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
+            <div class="relative">
+              <div class="relative bg-white dark:bg-slate-900 p-1.5 rounded-full shadow-lg border-2 border-slate-400">
+                <span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-[24px]">brush</span>
+              </div>
+              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                Makerspace
+              </div>
+            </div>
+          </div>
+          <!-- Map marker: Community Kitchen -->
+          <div class="absolute top-[70%] left-[30%] group cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
+            <div class="relative">
+              <div class="relative bg-white dark:bg-slate-900 p-1.5 rounded-full shadow-lg border-2 border-slate-400">
+                <span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-[24px]">restaurant</span>
+              </div>
+              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                Community Kitchen
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Map zoom / location controls -->
+        <div class="absolute bottom-6 right-6 flex flex-col gap-2 z-10">
+          <button class="bg-white dark:bg-slate-900 size-10 rounded-lg shadow-lg flex items-center justify-center hover:bg-primary transition-colors">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+          <button class="bg-white dark:bg-slate-900 size-10 rounded-lg shadow-lg flex items-center justify-center hover:bg-primary transition-colors">
+            <span class="material-symbols-outlined">remove</span>
+          </button>
+          <button class="bg-white dark:bg-slate-900 size-10 rounded-lg shadow-lg mt-2 flex items-center justify-center hover:bg-primary transition-colors">
+            <span class="material-symbols-outlined">my_location</span>
+          </button>
+        </div>
+        <!-- Map info card (active view stats) -->
+        <div class="absolute top-6 left-6 z-10">
+          <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 max-w-xs">
+            <p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Active View</p>
+            <h4 class="text-sm font-bold mb-2">Downtown Community District</h4>
+            <p class="text-xs text-slate-500 mb-3">Showing 14 active spaces and 5 events happening right now.</p>
+            <div class="flex gap-2">
+              <div class="flex-1 flex flex-col items-center p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
+                <span class="text-sm font-bold">1.4k</span>
+                <span class="text-[10px] text-slate-500">People Live</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
+                <span class="text-sm font-bold">82%</span>
+                <span class="text-[10px] text-slate-500">Vibe Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ----- MAP SECTION end ----- -->
+
+    </main>
+    <!-- ========== MAIN LAYOUT end ========== -->
+
+  </body>
+</html>

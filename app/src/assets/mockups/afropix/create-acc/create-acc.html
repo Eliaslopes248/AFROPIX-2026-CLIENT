@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Join Third Spaces | Create Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0ff0dd",
+              "background-light": "#f5f8f8",
+              "background-dark": "#102220",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .interest-card:hover {
+        transform: translateY(-4px);
+        transition: all 0.2s ease-in-out;
+      }
+      .interest-card.selected {
+        border-color: #0ff0dd;
+        background-color: rgba(15, 240, 221, 0.05);
+      }
+      input:focus {
+        --tw-ring-color: #0ff0dd !important;
+        border-color: #0ff0dd !important;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display">
+      <div class="layout-container flex h-full grow flex-col">
+
+        <!-- ========== HEADER / NAVBAR start ========== -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 bg-white dark:bg-slate-900 sticky top-0 z-50">
+          <div class="flex items-center gap-3">
+            <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-slate-900">
+              <span class="material-symbols-outlined text-2xl font-bold">hub</span>
+            </div>
+            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold leading-tight tracking-tight">Third Spaces</h2>
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center gap-8">
+              <span class="text-primary text-sm font-semibold">1. Setup Profile</span>
+              <span class="text-slate-400 dark:text-slate-500 text-sm font-medium">2. Location</span>
+              <span class="text-slate-400 dark:text-slate-500 text-sm font-medium">3. Finalize</span>
+            </div>
+            <button class="flex items-center justify-center rounded-full h-10 px-6 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-bold transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+              Skip
+            </button>
+          </div>
+        </header>
+        <!-- ========== HEADER / NAVBAR end ========== -->
+
+        <!-- ========== MAIN CONTENT start ========== -->
+        <main class="flex flex-1 justify-center py-12 px-6">
+          <div class="layout-content-container flex flex-col max-w-[1024px] flex-1">
+
+            <!-- ----- PAGE HERO / TITLE SECTION start ----- -->
+            <div class="flex flex-col gap-4 mb-10 text-center md:text-left">
+              <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight">What brings you joy?</h1>
+              <p class="text-slate-600 dark:text-slate-400 text-lg font-medium max-w-2xl">
+                Select at least 3 interests and complete your details to find your perfect third space.
+              </p>
+            </div>
+            <!-- ----- PAGE HERO / TITLE SECTION end ----- -->
+
+            <!-- ----- INTERESTS GRID (selectable cards) start ----- -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <!-- Interest card: Sports & Fitness -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-blue-500">fitness_center</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Sports &amp; Fitness</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Find local teams and gyms</p>
+                </div>
+              </div>
+              <!-- Interest card: Arts & Culture -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-purple-500">palette</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Arts &amp; Culture</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Galleries and studios</p>
+                </div>
+              </div>
+              <!-- Interest card: Tech & Coding -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-emerald-500">terminal</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Tech &amp; Coding</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Hackathons and meetups</p>
+                </div>
+              </div>
+              <!-- Interest card: Music & Performance -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-pink-500">music_note</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Music &amp; Performance</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Live shows and jam sessions</p>
+                </div>
+              </div>
+              <!-- Interest card: Food & Drink -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-orange-500">restaurant</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Food &amp; Drink</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Cafes, bars, and markets</p>
+                </div>
+              </div>
+              <!-- Interest card: Nature & Outdoors -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-green-500">forest</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Nature &amp; Outdoors</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Hiking and gardening</p>
+                </div>
+              </div>
+              <!-- Interest card: Gaming -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-indigo-500">sports_esports</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Gaming</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Arcades and gaming hubs</p>
+                </div>
+              </div>
+              <!-- Interest card: Volunteering -->
+              <div class="interest-card group cursor-pointer flex flex-col gap-0 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <div class="w-full aspect-video bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-red-500">volunteer_activism</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Volunteering</p>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Community service projects</p>
+                </div>
+              </div>
+            </div>
+            <!-- ----- INTERESTS GRID end ----- -->
+
+            <!-- ----- ACCOUNT DETAILS FORM (card + fields) start ----- -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-slate-100 dark:border-slate-800 p-8 md:p-10 mb-24">
+              <div class="flex flex-col gap-2 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Account Details</h3>
+                <p class="text-slate-500 dark:text-slate-400 font-medium">Almost there! We just need a few details to create your personalized profile.</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-bold text-slate-700 dark:text-slate-300" for="first_name">First Name</label>
+                  <input class="h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 px-4 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 transition-all" id="first_name" placeholder="John" required="" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-bold text-slate-700 dark:text-slate-300" for="last_name">Last Name</label>
+                  <input class="h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 px-4 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 transition-all" id="last_name" placeholder="Doe" required="" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-bold text-slate-700 dark:text-slate-300" for="email">Email Address</label>
+                  <input class="h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 px-4 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 transition-all" id="email" placeholder="john@example.com" required="" type="email"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-bold text-slate-700 dark:text-slate-300" for="phone">Phone Number</label>
+                  <input class="h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 px-4 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 transition-all" id="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+                </div>
+              </div>
+            </div>
+            <!-- ----- ACCOUNT DETAILS FORM end ----- -->
+
+          </div>
+        </main>
+        <!-- ========== MAIN CONTENT end ========== -->
+
+        <!-- ========== FOOTER (progress + CTA) start ========== -->
+        <footer class="fixed bottom-0 left-0 right-0 border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-6 md:px-10 py-5 z-50">
+          <div class="max-w-[1024px] mx-auto flex items-center justify-between gap-4">
+            <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+              <div class="flex -space-x-2">
+                <div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-primary/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-xs text-slate-700">check</span>
+                </div>
+                <div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                  <span class="text-[10px] font-bold text-slate-400">2</span>
+                </div>
+                <div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                  <span class="text-[10px] font-bold text-slate-400">3</span>
+                </div>
+              </div>
+              <div>
+                <p class="text-slate-900 dark:text-slate-100 text-sm font-bold">Progress: Ready to join</p>
+                <p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Select 3 interests &amp; fill details</p>
+              </div>
+            </div>
+            <button class="flex min-w-[140px] md:min-w-[180px] cursor-not-allowed items-center justify-center overflow-hidden rounded-xl h-12 px-8 bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 text-base font-bold leading-normal tracking-wide transition-all shadow-sm">
+              Create Account
+            </button>
+          </div>
+        </footer>
+        <!-- ========== FOOTER end ========== -->
+
+      </div>
+    </div>
+  </body>
+</html>
