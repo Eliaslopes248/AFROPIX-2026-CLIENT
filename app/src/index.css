@@ -49,3 +49,30 @@ input:focus {
   background: #cbd5e1;
   border-radius: 10px;
 }
+
+/* Loader (wave dots) – uses theme primary */
+@keyframes loader-wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1em);
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+}
+
+.loader-circle {
+  width: 1em;
+  height: 1em;
+  margin: 0 0.25em;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  animation: loader-wave 1.5s infinite ease-in-out;
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Third Space - Find Your Place in the Real World</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee8c2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+<div class="flex items-center gap-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">temple_buddhist</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Third Space</h2>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Find Spaces</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden text-sm font-bold md:block px-4 py-2 hover:text-primary">Log In</button>
+<button class="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        Sign Up
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-6 pt-16 pb-24 lg:px-10 lg:pt-32">
+<div class="mx-auto max-w-7xl text-center">
+<div class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Discover Your Community</span>
+</div>
+<h1 class="mx-auto max-w-4xl text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white sm:text-7xl">
+                        Find Your Place in the <span class="text-primary">Real World.</span>
+</h1>
+<p class="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                        Rediscover community life by finding local spaces to gather, work, and belong beyond home and the office. Escape the digital isolation and reconnect.
+                    </p>
+<div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+<button class="flex h-14 min-w-[200px] items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:scale-105 transition-transform">
+                            Find Third Spaces
+                        </button>
+<button class="flex h-14 min-w-[200px] items-center justify-center rounded-full border-2 border-slate-200 dark:border-slate-800 px-8 text-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors">
+                            How it Works
+                        </button>
+</div>
+</div>
+<!-- Abstract Hero Decoration -->
+<div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary/5 blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl"></div>
+</section>
+<!-- Feature Grid Image Component (Custom replacement for generic images) -->
+<div class="mx-auto max-w-6xl px-6 lg:px-10">
+<div class="relative h-[400px] w-full overflow-hidden rounded-xl bg-slate-200 lg:h-[500px]">
+<img alt="Community Cafe" class="h-full w-full object-cover" data-alt="People laughing and talking in a cozy, sun-drenched community cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhA6ve1WMoo1X_soZBIt6j2anm64FpfTe9tas4ZxRWM_rUPDq77xCvdsOznOQcfGGfp0V3hi5K5l2KKHiUPY3HG4tK1NiUFnDfwv3vCkKDGqpzBpbvf_X7zvLoXGsY0-_4Pyy_MciG2tAJwBu33zrf_eTOYhgchp5dbkaEgnjnfvd2aowZEKFmpl0yc42U4EnfiGW1mAUyCQMb0TXOl4R8RMpPU0jpPBCs7CVyEfYJWOySiXdevgDkLIGQ7Q6WRPw9mLWLBHe6lA-n"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<p class="text-lg font-medium">Local Gems</p>
+<p class="text-sm opacity-80">Discover spaces that inspire connection.</p>
+</div>
+</div>
+</div>
+<!-- Why Section -->
+<section class="py-24 lg:py-32">
+<div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="mb-16 max-w-2xl">
+<h2 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                            Why We Do What We Do
+                        </h2>
+<div class="mt-4 h-1.5 w-20 rounded-full bg-primary"></div>
+<p class="mt-6 text-lg text-slate-600 dark:text-slate-400">
+                            Building real-world connections in an increasingly digital age. We believe humans thrive when they have physical spaces to belong.
+                        </p>
+</div>
+<div class="grid gap-8 md:grid-cols-3">
+<!-- Reconnect -->
+<div class="group flex flex-col rounded-xl border border-primary/10 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:bg-slate-900/50">
+<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">diversity_3</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Reconnect</h3>
+<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+                                Combat isolation by stepping into vibrant local environments designed for human connection. Move from screens to face-to-face interaction.
+                            </p>
+</div>
+<!-- Discover -->
+<div class="group flex flex-col rounded-xl border border-primary/10 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:bg-slate-900/50">
+<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">explore</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Discover</h3>
+<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+                                Find hidden local gems like community gardens, quiet libraries, and bustling social hubs that you never knew existed in your neighborhood.
+                            </p>
+</div>
+<!-- Belong -->
+<div class="group flex flex-col rounded-xl border border-primary/10 bg-white p-8 shadow-sm transition-all hover:shadow-md dark:bg-slate-900/50">
+<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Belong</h3>
+<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+                                Build real-world community ties and find a place where everybody knows your name. Turn neighbors into friends in shared local spaces.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="bg-primary/5 py-24">
+<div class="mx-auto max-w-4xl px-6 text-center lg:px-10">
+<h2 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                        Ready to find your third space?
+                    </h2>
+<p class="mx-auto mt-6 text-lg text-slate-600 dark:text-slate-400">
+                        Join thousands of neighbors rediscovering their local communities. Your next favorite spot is just a click away.
+                    </p>
+<div class="mt-10 flex justify-center">
+<button class="h-14 rounded-full bg-primary px-10 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:scale-105 transition-transform">
+                            Get Started Now
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-primary/10 bg-white py-12 dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-lg">temple_buddhist</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Third Space</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400" href="#">About Us</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400" href="#">Contact</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400" href="#">Privacy Policy</a>
+</nav>
+<div class="flex gap-4">
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary/20 hover:text-primary dark:bg-slate-800 dark:text-slate-400" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary/20 hover:text-primary dark:bg-slate-800 dark:text-slate-400" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+</div>
+</div>
+<div class="mt-8 border-t border-slate-100 pt-8 text-center text-xs text-slate-500 dark:border-slate-800">
+<p>© 2024 Third Space. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

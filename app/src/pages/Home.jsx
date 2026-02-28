@@ -5,7 +5,7 @@ export default function Home() {
   useEffect(()=>{
     async function foo(){
       const url = import.meta.env.VITE_BASE_URL;
-      const d = await fetch(`${url}`, {
+      const d = await fetch(`${url}/api/spaces/get/all`, {
         headers: {"Content-Type" : "application/json"},
         method: "GET"
       });
