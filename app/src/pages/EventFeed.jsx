@@ -36,7 +36,7 @@ export default function EventFeed() {
         onSearchChange={setSearchQuery}
       />
       <EventFeedHeadbar />
-      <main className="flex flex-1 min-h-0 relative z-0">
+      <div className="flex flex-1 min-h-0 relative z-0">
         <EventFeedSidebar
           onEventHover={handleEventHover}
           onEventLeave={handleEventLeave}
@@ -44,13 +44,13 @@ export default function EventFeed() {
           savedEventIds={savedEventIds}
           onToggleSave={handleToggleSave}
         />
-        <div className="flex-1 min-w-0 min-h-0 relative z-0">
+        <div className="hidden md:block flex-1 min-w-0 min-h-0 relative z-0">
           <EventFeedMap3D
             defaultCenter={DEFAULT_MAP_CENTER}
             hoveredLocation={hoveredLocation}
           />
         </div>
-      </main>
+      </div>
     </div>
   );
 }
