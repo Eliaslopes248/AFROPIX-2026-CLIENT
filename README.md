@@ -1,1 +1,3 @@
 # AFROPIX-2026-CLIENT
+
+LINK TO REST API: https://github.com/Eliaslopes248/AFROPIX-2026-SERVER
